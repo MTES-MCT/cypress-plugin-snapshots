@@ -11,7 +11,15 @@ This plugin is used by [MonitorFish](https://github.com/MTES-MCT/monitorfish).
 
 ## Installation
 
-`npm i -DE MTES-MCT/cypress-plugin-snapshots`
+1. Add this repo to you dev deps:
+  ```json
+  "devDependencies": {
+    // ...
+    "cypress-plugin-snapshots": "github:MTES-MCT/cypress-plugin-snapshots",
+    // ...
+  }
+  ```
+1. Run `npm i`
 
 ## Usage for text snapshots
 ```javascript
