@@ -1,12 +1,17 @@
 # cypress-plugin-snapshots
-> Plugin for snapshot tests in [Cypress.io](https://www.cypress.io/).
 
-[![Build status][ci-image]][ci-url]
+This repository is a naive fork of the useful but unmaintained
+[meinaart/cypress-plugin-snapshots](https://github.com/meinaart/cypress-plugin-snapshots).
 
-![cypress-plugin-snapshots](docs/images/cypress-plugin-snapshots.png)
+This plugin is used by [MonitorFish](https://github.com/MTES-MCT/monitorfish).
+
+## Screenshot
+
+![cypress-plugin-snapshots](https://raw.githubusercontent.com/MTES-MCT/cypress-plugin-snapshots/refs/heads/main/docs/images/cypress-plugin-snapshots.png)
 
 ## Installation
-`npm i -DE ivangabriele/cypress-plugin-snapshots`
+
+`npm i -DE MTES-MCT/cypress-plugin-snapshots`
 
 ## Usage for text snapshots
 ```javascript
@@ -93,6 +98,7 @@ cy.get('.element')
 ```
 
 ## Configure Cypress.io
+
 Add this to your `cypress.json` configuration file:
 ```json
 "ignoreTestFiles": [
@@ -102,6 +108,7 @@ Add this to your `cypress.json` configuration file:
 ```
 
 ### Plugin
+
 Find your `cypress/plugins/index.js` file and change it to look like this:
 
 ```javascript
@@ -114,6 +121,7 @@ module.exports = (on, config) => {
 ```
 
 ### Command
+
 Find your `cypress/support/index.js` file and add the following line:
 
 ```javascript
@@ -121,6 +129,7 @@ import 'cypress-plugin-snapshots/commands';
 ```
 
 ### Make changes to default configuration
+
 You can customize the configuration in the `cypress.json` file in the root of your Cypress project.
 
 Add the configuration below to your `cypress.json` file to make changes to the default values.
@@ -161,22 +170,5 @@ Add the configuration below to your `cypress.json` file to make changes to the d
 ```
 
 ## Caveats :warning:
+
 There is currently an issue when running "All Tests" in Cypress with this plugin. You can follow the progress on the issue [here](https://github.com/meinaart/cypress-plugin-snapshots/issues/10) and [here](https://github.com/cypress-io/cypress/issues/3090). When running "All Tests" any tests that utilize `cypress-plugin-snapshots` will throw an error.
-
-## Roadmap
-Below is a list of functionality that is under consideration for implementing in a next version.
-
-- Fix handling of "update snapshot" button that contains a replacable field
-- Disable "update snapshots" server in headless mode
-- Add more unit tests
-- Add [JSDoc](http://usejsdoc.org/) documentation
-- Improve TypeScript bindings
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style.
-
-## License
-This plugin is released under the MIT license.
-
-[ci-image]: https://github.com/ivangabriele/cypress-plugin-snapshots/workflows/test/badge.svg?branch=master
-[ci-url]: https://github.com/ivangabriele/cypress-plugin-snapshots/actions
